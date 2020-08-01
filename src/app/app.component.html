@@ -1,4 +1,4 @@
-<!--The content below is only a placeholder and can be replaced.-->
+<!-- The content below is only a placeholder and can be replaced.
 <div style="text-align:center">
   <h1>
     Welcome to {{ title }}!
@@ -18,4 +18,29 @@
   </li>
 </ul>
 
-<router-outlet></router-outlet>
+<router-outlet></router-outlet> -->
+
+
+<table style="width:100%">
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Employee Name</th>
+    <th>Age</th>
+    <th>DOJ</th>
+    <th>DOB</th>
+    <th>Profile Pic</th>
+  </tr>
+
+  <ng-container *ngIf="employees">
+    <tr *ngFor="let employee of employees">
+      <th>{{employee.firstName}}</th>
+      <th>{{employee.lastName}}</th>
+      <th>{{employee.employeeName}}</th>
+      <th>{{employee.age}}</th>
+      <th>{{employee.doj}}</th>
+      <th>{{employee.dob}}</th>
+      <th>{{employee.ProfilePic}}</th>
+    </tr>
+  </ng-container>
+</table>
