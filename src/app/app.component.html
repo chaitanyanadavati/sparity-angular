@@ -21,7 +21,7 @@
 <router-outlet></router-outlet> -->
 
 
-<table style="width:100%">
+<table>
   <tr>
     <th>First Name</th>
     <th>Last Name</th>
@@ -44,9 +44,8 @@
 </table>
 
 
-<div *ngIf="employeeObj && employeeObj.paginationArray" style="text-align: center;margin: 25px;">
+<div *ngIf="employeeObj && employeeObj.paginationArray" class="pagination">
   <ng-container *ngFor="let count of employeeObj.paginationArray;">
-    <span style="width: 20px;border: 1px solid;margin: 0 10px;padding: 5px;cursor: pointer;"
-      (click)="changePage(count)">{{count}}</span>
+    <span (click)="changePage(count)">{{count}}</span>
   </ng-container>
 </div>

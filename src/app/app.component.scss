@@ -1,4 +1,21 @@
-table, th, td {
+table,
+th,
+td {
   border: 1px solid black;
   border-collapse: collapse;
+}
+table {
+  width: 100%;
+}
+
+.pagination {
+  text-align: center;
+  margin: 25px;
+  span {
+    width: 20px;
+    border: 1px solid;
+    margin: 0 10px;
+    padding: 5px;
+    cursor: pointer;
+  }
 }
