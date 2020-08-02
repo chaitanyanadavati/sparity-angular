@@ -38,7 +38,7 @@
       <th>{{employee.age}}</th>
       <th>{{employee.doj | date:'dd-m-yyyy'}}</th>
       <th>{{employee.dob | date:'dd-m-yyyy'}}</th>
-      <th>{{employee.ProfilePic}}</th>
+      <th><img [src]="employee.profilePic" alt="profile picture" width="50"></th>
     </tr>
   </ng-container>
 </table>
