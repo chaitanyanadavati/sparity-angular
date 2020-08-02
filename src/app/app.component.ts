@@ -11,15 +11,19 @@ export class AppComponent {
   skip = 0;
   limit = 5;
   employeeObj: any;
+  searchQuery: string;
   constructor(private appService: AppService) {
     this.getEmployees();
   }
 
   getEmployees() {
-    const params = {
+    const params: any = {
       skip: this.skip,
-      limit: this.limit
+      limit: this.limit,
     };
+    if (this.searchQuery) {
+      params.search_string = this.searchQuery;
+    }
     this.appService.getEmployees(params).subscribe((resp: any) => {
       this.employeeObj = resp;
       this.employeeObj.paginationArray = [];

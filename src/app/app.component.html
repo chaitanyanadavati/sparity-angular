@@ -20,6 +20,8 @@
 
 <router-outlet></router-outlet> -->
 
+<input type="text" placeholder="search by name" [(ngModel)]="searchQuery">
+<button (click)="getEmployees()">search</button>
 
 <table>
   <tr>
