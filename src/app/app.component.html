@@ -25,22 +25,28 @@
   <tr>
     <th>First Name</th>
     <th>Last Name</th>
-    <th>Employee Name</th>
     <th>Age</th>
     <th>DOJ</th>
     <th>DOB</th>
     <th>Profile Pic</th>
   </tr>
 
-  <ng-container *ngIf="employees">
-    <tr *ngFor="let employee of employees">
+  <ng-container *ngIf="employeeObj && employeeObj.employees">
+    <tr *ngFor="let employee of employeeObj.employees">
       <th>{{employee.firstName}}</th>
       <th>{{employee.lastName}}</th>
-      <th>{{employee.employeeName}}</th>
       <th>{{employee.age}}</th>
-      <th>{{employee.doj}}</th>
-      <th>{{employee.dob}}</th>
+      <th>{{employee.doj | date:'dd-m-yyyy'}}</th>
+      <th>{{employee.dob | date:'dd-m-yyyy'}}</th>
       <th>{{employee.ProfilePic}}</th>
     </tr>
   </ng-container>
 </table>
+
+
+<div *ngIf="employeeObj && employeeObj.paginationArray" style="text-align: center;margin: 25px;">
+  <ng-container *ngFor="let count of employeeObj.paginationArray;">
+    <span style="width: 20px;border: 1px solid;margin: 0 10px;padding: 5px;cursor: pointer;"
+      (click)="changePage(count)">{{count}}</span>
+  </ng-container>
+</div>

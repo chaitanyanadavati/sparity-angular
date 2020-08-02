@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppService } from '../app/app.service';
 
 @Component({
   selector: 'app-root',
@@ -7,225 +8,29 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'sparity';
-  employees = [];
-  constructor() {
-    this.employees = [
-      {
-        firstName: 'Romin',
-        lastName: 'Irani',
-        age: 25,
-        employeeName: 'Romin Irani',
-        doj: '25-02-2020',
-        dob: '25-02-1997',
-        ProfilePic: '408-1234567',
-      },
-      {
-        firstName: 'Neil',
-        lastName: 'Irani',
-        age: 18,
-        employeeName: 'Neil Irani',
-        doj: '25-02-2020',
-        dob: '25-02-1995',
-        ProfilePic: '408-1111111',
-      },
-      {
-        firstName: 'Tom',
-        lastName: 'Hanks',
-        age: 22,
-        employeeName: 'Tom Hanks',
-        doj: '25-02-2020',
-        dob: '25-02-1996',
-        ProfilePic: '408-2222222',
-      },
-      {
-        firstName: 'Romin',
-        lastName: 'Irani',
-        age: 25,
-        employeeName: 'Romin Irani',
-        doj: '25-02-2020',
-        dob: '25-02-1997',
-        ProfilePic: '408-1234567',
-      },
-      {
-        firstName: 'Neil',
-        lastName: 'Irani',
-        age: 18,
-        employeeName: 'Neil Irani',
-        doj: '25-02-2020',
-        dob: '25-02-1995',
-        ProfilePic: '408-1111111',
-      },
-      {
-        firstName: 'Tom',
-        lastName: 'Hanks',
-        age: 22,
-        employeeName: 'Tom Hanks',
-        doj: '25-02-2020',
-        dob: '25-02-1996',
-        ProfilePic: '408-2222222',
-      },
-      {
-        firstName: 'Romin',
-        lastName: 'Irani',
-        age: 25,
-        employeeName: 'Romin Irani',
-        doj: '25-02-2020',
-        dob: '25-02-1997',
-        ProfilePic: '408-1234567',
-      },
-      {
-        firstName: 'Neil',
-        lastName: 'Irani',
-        age: 18,
-        employeeName: 'Neil Irani',
-        doj: '25-02-2020',
-        dob: '25-02-1995',
-        ProfilePic: '408-1111111',
-      },
-      {
-        firstName: 'Tom',
-        lastName: 'Hanks',
-        age: 22,
-        employeeName: 'Tom Hanks',
-        doj: '25-02-2020',
-        dob: '25-02-1996',
-        ProfilePic: '408-2222222',
-      },
-      {
-        firstName: 'Romin',
-        lastName: 'Irani',
-        age: 25,
-        employeeName: 'Romin Irani',
-        doj: '25-02-2020',
-        dob: '25-02-1997',
-        ProfilePic: '408-1234567',
-      },
-      {
-        firstName: 'Neil',
-        lastName: 'Irani',
-        age: 18,
-        employeeName: 'Neil Irani',
-        doj: '25-02-2020',
-        dob: '25-02-1995',
-        ProfilePic: '408-1111111',
-      },
-      {
-        firstName: 'Tom',
-        lastName: 'Hanks',
-        age: 22,
-        employeeName: 'Tom Hanks',
-        doj: '25-02-2020',
-        dob: '25-02-1996',
-        ProfilePic: '408-2222222',
-      },
-      {
-        firstName: 'Romin',
-        lastName: 'Irani',
-        age: 25,
-        employeeName: 'Romin Irani',
-        doj: '25-02-2020',
-        dob: '25-02-1997',
-        ProfilePic: '408-1234567',
-      },
-      {
-        firstName: 'Neil',
-        lastName: 'Irani',
-        age: 18,
-        employeeName: 'Neil Irani',
-        doj: '25-02-2020',
-        dob: '25-02-1995',
-        ProfilePic: '408-1111111',
-      },
-      {
-        firstName: 'Tom',
-        lastName: 'Hanks',
-        age: 22,
-        employeeName: 'Tom Hanks',
-        doj: '25-02-2020',
-        dob: '25-02-1996',
-        ProfilePic: '408-2222222',
-      },
-      {
-        firstName: 'Romin',
-        lastName: 'Irani',
-        age: 25,
-        employeeName: 'Romin Irani',
-        doj: '25-02-2020',
-        dob: '25-02-1997',
-        ProfilePic: '408-1234567',
-      },
-      {
-        firstName: 'Neil',
-        lastName: 'Irani',
-        age: 18,
-        employeeName: 'Neil Irani',
-        doj: '25-02-2020',
-        dob: '25-02-1995',
-        ProfilePic: '408-1111111',
-      },
-      {
-        firstName: 'Tom',
-        lastName: 'Hanks',
-        age: 22,
-        employeeName: 'Tom Hanks',
-        doj: '25-02-2020',
-        dob: '25-02-1996',
-        ProfilePic: '408-2222222',
-      },
-      {
-        firstName: 'Romin',
-        lastName: 'Irani',
-        age: 25,
-        employeeName: 'Romin Irani',
-        doj: '25-02-2020',
-        dob: '25-02-1997',
-        ProfilePic: '408-1234567',
-      },
-      {
-        firstName: 'Neil',
-        lastName: 'Irani',
-        age: 18,
-        employeeName: 'Neil Irani',
-        doj: '25-02-2020',
-        dob: '25-02-1995',
-        ProfilePic: '408-1111111',
-      },
-      {
-        firstName: 'Tom',
-        lastName: 'Hanks',
-        age: 22,
-        employeeName: 'Tom Hanks',
-        doj: '25-02-2020',
-        dob: '25-02-1996',
-        ProfilePic: '408-2222222',
-      },
-      {
-        firstName: 'Romin',
-        lastName: 'Irani',
-        age: 25,
-        employeeName: 'Romin Irani',
-        doj: '25-02-2020',
-        dob: '25-02-1997',
-        ProfilePic: '408-1234567',
-      },
-      {
-        firstName: 'Neil',
-        lastName: 'Irani',
-        age: 18,
-        employeeName: 'Neil Irani',
-        doj: '25-02-2020',
-        dob: '25-02-1995',
-        ProfilePic: '408-1111111',
-      },
-      {
-        firstName: 'Tom',
-        lastName: 'Hanks',
-        age: 22,
-        employeeName: 'Tom Hanks',
-        doj: '25-02-2020',
-        dob: '25-02-1996',
-        ProfilePic: '408-2222222',
+  skip = 0;
+  limit = 5;
+  employeeObj: any;
+  constructor(private appService: AppService) {
+    this.getEmployees();
+  }
+
+  getEmployees() {
+    const params = {
+      skip: this.skip,
+      limit: this.limit
+    };
+    this.appService.getEmployees(params).subscribe((resp: any) => {
+      this.employeeObj = resp;
+      this.employeeObj.paginationArray = [];
+      for (let i = 0; i < Math.ceil(this.employeeObj.total / this.employeeObj.limit); i++) {
+        this.employeeObj.paginationArray.push(i + 1);
       }
-    ];
+    });
+  }
+
+  changePage(count: number) {
+    this.skip = (count - 1) * this.limit;
+    this.getEmployees();
   }
 }
